@@ -1,16 +1,15 @@
-server:
-  port: 3344
-
 spring:
+  profiles:
+    active:
+      - dev
+---
+spring:
+  profiles: dev #开发环境
   application:
-    name: microservicecloud-config
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/xs15072226372/microservicecloud-config.git #github上面git的仓库名字
-          username: xs15072226372
-          password: xueshuang15072226372
-
-
-
+    name: microservicecloud-config-atguigu-dev
+---
+spring:
+  profiles: test  #测试环境
+    application:
+      name: microservicecloud-config-atguigu-test
+#请保存utf-8格式
